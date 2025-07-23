@@ -17,7 +17,7 @@ class AllBooks extends Component {
           <Row>
             <h1>{librifantasy[0].category}</h1>
             {librifantasy.map((libro) => {
-              console.log(libro);
+              // console.log(libro);
               return (
                 <Col xs={12} md={4} lg={3} key={libro.asin}>
                   <Card className="h-100">
