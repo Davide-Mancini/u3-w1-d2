@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   // console.log(libroSingolo);
@@ -10,16 +11,14 @@ class SingleBook extends Component {
     return (
       <>
         <Card
-          className={
-            this.state.selected === true ? "border border-danger" : this.state
-          }
+          className={this.state.selected === true ? "border border-danger" : ""}
         >
           <Card.Img
             variant="top"
             src={this.props.libroSingolo.img}
             onClick={() => {
               this.setState({
-                selected: true,
+                selected: !this.state.selected,
               });
             }}
           />
@@ -27,6 +26,12 @@ class SingleBook extends Component {
           <Card.Body>
             <Card.Title>{this.props.libroSingolo.title}</Card.Title>
           </Card.Body>
+          {
+            this.state.selected === true && (
+              <CommentArea IdLibro={this.props.libroSingolo.asin} />
+            )
+            // console.log(this.props.libroSingolo.asin);
+          }
         </Card>
       </>
     );
