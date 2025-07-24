@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import CommentArea from "./CommentArea";
+import AddComment from "./AddComment";
 
 class SingleBook extends Component {
   // console.log(libroSingolo);
@@ -28,7 +29,10 @@ class SingleBook extends Component {
           </Card.Body>
           {
             this.state.selected === true && (
-              <CommentArea IdLibro={this.props.libroSingolo.asin} />
+              <>
+                <CommentArea IdLibro={this.props.libroSingolo.asin} />
+                <AddComment />
+              </>
             )
             // console.log(this.props.libroSingolo.asin);
           }

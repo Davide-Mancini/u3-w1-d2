@@ -1,6 +1,6 @@
 import { Component } from "react";
 import CommentList from "./CommentList";
-
+import AddComment from "./AddComment";
 class CommentArea extends Component {
   state = {
     comments: [],
@@ -34,7 +34,12 @@ class CommentArea extends Component {
     console.log("RENDER FATTO");
     // console.log(this.state.comments);
 
-    return <CommentList comments={this.state.comments} />;
+    return (
+      <>
+        <CommentList comments={this.state.comments} />
+        <AddComment libroId={this.props.IdLibro} />
+      </>
+    );
   }
 }
 export default CommentArea;
