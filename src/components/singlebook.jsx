@@ -31,7 +31,7 @@ class SingleBook extends Component {
             this.state.selected === true && (
               <>
                 <CommentArea IdLibro={this.props.libroSingolo.asin} />
-                <AddComment />
+                <AddComment IdLibro={this.props.libroSingolo.asin} />
               </>
             )
             // console.log(this.props.libroSingolo.asin);
